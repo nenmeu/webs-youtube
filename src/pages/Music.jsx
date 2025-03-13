@@ -1,8 +1,11 @@
 import React from 'react'
+import Main from '../components/section/Main'
 
 const Music = () => {
   return (
-    <div>Music</div>
+    <Main title="음악 채널" description="음악 페이지입니다.">
+      Music
+    </Main>
   )
 }
 
