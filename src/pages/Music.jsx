@@ -1,10 +1,31 @@
 import React from 'react'
 import Main from '../components/section/Main'
+import { Link } from 'react-router-dom'
+import { musicText } from '../data/music'
 
 const Music = () => {
   return (
-    <Main title="음악 채널" description="음악 페이지입니다.">
-      Music
+    <Main title="음악 채널" 
+    description="음악 추천 페이지입니다.">
+      <section id='music'>
+        <h2>(￣y▽￣)╭ 추천 음악을 소개합니다.</h2>
+              <div className='music_inner'>
+                {musicText.map((music, key)=>(
+                  <div className='music' key={key}>
+                    <div className='music_img play_icon'>
+                      <Link to={`/channel/${music.channelId}`}>
+                        <img src={music.img} alt={music.name}/>
+                      </Link>
+                    </div>
+                    <div className='music_info'>
+                      <Link to={`/channel/${music.channelId}`}>
+                        {music.name}
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+      </section>
     </Main>
   )
 }
