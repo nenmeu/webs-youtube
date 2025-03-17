@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Main from '../components/section/Main'
-import { todayText, TodayText } from '../data/Today'
+import { todayText,} from '../data/Today'
 import { Link } from 'react-router-dom'
 
 const Today = () => {
+    const [loading, setLoading]=useState(true)
+    useEffect(()=>{
+      setTimeout(()=>{
+        setLoading(false)
+      },300)
+    },[])
+    const todayClass=loading ? 'isLoading' : 'isLoaded'
   return (
     <Main 
     title="추천 영상" 
     description="영상 추천 페이지입니다.">
-      <section id='todayPage'>
+      <section id='todayPage'className={todayClass}>
         <h2>(☞ﾟヮﾟ)☞오늘의 추천 영상입니다.</h2>
         {todayText.map((today,key)=>{
           return(

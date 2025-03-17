@@ -5,7 +5,7 @@ import { BrowserRouter,Routes,Route } from 'react-router-dom'
 const Home = lazy(()=> import ('./pages/Home'));
 const Today = lazy(()=> import ('./pages/Today'));
 const Music = lazy(()=> import ('./pages/Music'));
-const Movie = lazy(()=> import ('./pages/Home'));
+const Movie = lazy(()=> import ('./pages/Movie'));
 const Book = lazy(()=> import ('./pages/Book'));
 const Anime = lazy(()=> import ('./pages/Anime'));
 const Port = lazy(()=> import ('./pages/Port'));
@@ -37,7 +37,6 @@ const App = () => {
             <Route path='/*'element={<Not/>}/>
           </Routes>
         </Suspense>
-       
     </BrowserRouter>
   )
 }
